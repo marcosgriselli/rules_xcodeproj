@@ -76,7 +76,7 @@ extension Generator {
         var xcVersionGroups: [FilePath: XCVersionGroup] = [:]
         var knownRegions: Set<String> = []
         var resolvedRepositories: [(Path, Path)] = [
-            (".", forFixtures ? "$(SRCROOT)" : directories.workspace),
+            ("/PWD", forFixtures ? "$(SRCROOT)" : directories.workspace),
         ]
 
         enum BazelNodeType {
@@ -147,7 +147,7 @@ extension Generator {
                     if addToResolvedRepositories {
                         resolvedRepositories.append(
                             (
-                                "./external" + relativePath,
+                                "/PWD/external" + relativePath,
                                 "$(SRCROOT)" + resolvedRelativePath
                             )
                         )
@@ -163,7 +163,7 @@ extension Generator {
 
             if addToResolvedRepositories {
                 resolvedRepositories.append(
-                    ("./external" + relativePath, absolutePath)
+                    ("/PWD/external" + relativePath, absolutePath)
                 )
             }
 
