@@ -33,16 +33,16 @@ mkdir -p "$index_external"
 # specified below.
 
 # `bazel-out` when set from Project navigator or swiftsourcefile
-echo "settings set target.source-map /PWD/bazel-out/ \"$BAZEL_OUT\""
+echo "settings set target.source-map ./bazel-out/ \"$BAZEL_OUT\""
 # `bazel-out` when set from indexing opened file
-echo "settings append target.source-map /PWD/bazel-out/ \"$index_bazel_out\""
+echo "settings append target.source-map ./bazel-out/ \"$index_bazel_out\""
 
 # `external` when set from Project navigator
-echo "settings append target.source-map /PWD/external/ \"$BAZEL_EXTERNAL\""
+echo "settings append target.source-map ./external/ \"$BAZEL_EXTERNAL\""
 # `external` when set from indexing opened file
-echo "settings append target.source-map /PWD/external/ \"$index_external\""
+echo "settings append target.source-map ./external/ \"$index_external\""
 # `external` when set from swiftsourcefile
-echo "settings append target.source-map /PWD/external/ \"$build_external\""
+echo "settings append target.source-map ./external/ \"$build_external\""
 
 # Project files and locally resolved external repositories
 #
