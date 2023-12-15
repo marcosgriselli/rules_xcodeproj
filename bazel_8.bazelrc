@@ -1,2 +1,4 @@
+common --incompatible_python_disallow_native_rules
+
 # Disabled until bugs are fixed
 common --lockfile_mode=off
